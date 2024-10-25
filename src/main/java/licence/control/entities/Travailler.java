@@ -3,6 +3,8 @@ package licence.control.entities;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "travailler", schema = "bddsupermarche")
 public class Travailler {
@@ -22,10 +24,10 @@ public class Travailler {
     @ColumnDefault("0")
     @Column(name = "temps")
     private Integer temps;
-    
-    @ColumnDefault("0000-00-00")
-    @Column(name = "date")
-    private String date;
+
+    @Column(name = "date", insertable = false, updatable = false)
+    private Date date;
+
 
     public TravaillerId getId() {
         return id;
@@ -59,11 +61,11 @@ public class Travailler {
         this.temps = temps;
     }
     
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
     
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

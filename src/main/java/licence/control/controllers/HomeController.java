@@ -22,4 +22,5 @@ public class HomeController {
         model.addAttribute("secteurs", lesSecteurs);
         return "index";
     }
+
 }

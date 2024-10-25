@@ -11,7 +11,7 @@ public class Secteur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "numS", nullable = false)
-    private Integer id;
+    private Integer numS;
 
     @Column(name = "nomS", nullable = false, length = 250)
     private String nomS;
@@ -19,12 +19,12 @@ public class Secteur {
     @OneToMany(mappedBy = "numSecteur")
     private Set<Rayon> rayons = new LinkedHashSet<>();
 
-    public Integer getId() {
-        return id;
+    public Integer getNumS() {
+        return numS;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setNumS(Integer id) {
+        this.numS = id;
     }
 
     public String getNomS() {
